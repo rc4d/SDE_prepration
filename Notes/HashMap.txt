@@ -1,0 +1,72 @@
+Properties of HashMap:
+
+1. Duplicate keys are not allowed in HashMap but allows duplicate values
+2. HashMap stores null keys but only one null key object is allowed and there can be many null values
+3. Initial capacity of hashmap: 16 and load factor of 0.75
+4. The insertion order is not retained in the Hashmap ( retrived in random order)
+5. HashMap insertion and retrieval takes O(1) time complexity
+
+Applications of HashMap: HashMap is mainly the implementation of hashing
+Pros: HashMap is useful when we need efficient implementation of search, insert and delete operations
+
+Syntax:
+HashMap<String, Integer> map = new HashMap<>();
+map.put("vishal", 10);
+System.out.println("Size of map is:- "+ map.size());
+
+Remove element: hm.remove(4);
+
+if (map.containsKey("vishal")) {
+ 
+            // Mapping
+            Integer a = map.get("vishal");
+ 
+            // Printing value for the corresponding key
+            System.out.println("value for key"
+                               + " \"vishal\" is:- " + a);
+ }
+ 
+ map.containsValue(Object value)
+ 
+ //Gets the value mapped to a and if not present returns 0
+ int count= hmap.getOrDefault(a,0);
+ 
+ ****** Copying one hashmap to another *******
+ 
+ Map<Integer, String> hm1 = new HashMap<>();
+ HashMap<Integer, String> hm2 = new HashMap<Integer, String>(hm1);
+ 
+                  OR
+                  
+ hm1.clone();
+ 
+ *********************************************
+ 
+ Iterate HashMap 
+ https://www.javaguides.net/2020/03/5-best-ways-to-iterate-over-hashmap-in-java.html
+ 
+ HashMap<String, Integer> map = new HashMap<>();
+
+#Iterating through a HashMap using Lambda Expressions
+
+ map.forEach((key,value) -> {
+  System.out.println("key:"+key); 
+  System.out.println("value:"+value); 
+ });
+ 
+ 
+ #Iterate HashMap using For-each Loop
+ 
+        for (Map.Entry < Integer, String > entry: map.entrySet()) {
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue());
+        }
+ *********************************************
+ 
+ keySet()	- Returns a Set view of the keys contained in this map.
+ putIfAbsent(K key, V value) -	If the specified key is not already associated with a value (or is mapped to null) associates it with the given value and returns null, else returns the current value.
+ remove(Object key, Object value)	- Removes the entry for the specified key only if it is currently mapped to the specified value.
+ replace(K key, V value) -	Replaces the entry for the specified key only if it is currently mapped to some value.
+ replace(K key, V oldValue, V newValue)	- Replaces the entry for the specified key only if currently mapped to the specified value.
+ 
+ Ref: https://www.geeksforgeeks.org/java-util-hashmap-in-java-with-examples/
